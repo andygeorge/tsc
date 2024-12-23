@@ -1,8 +1,7 @@
 module github.com/andygeorge/tsc
 
-go 1.20
+go 1.23.4
 
-require (
-	github.com/alexflint/go-arg v1.4.3 // indirect
-	github.com/alexflint/go-scalar v1.1.0 // indirect
-)
+require github.com/alexflint/go-arg v1.5.1
+
+require github.com/alexflint/go-scalar v1.2.0 // indirect
