@@ -6,7 +6,7 @@ Tail Site Code
 
 ```sh
 # install go
-sh -c 'VERSION="v0.0.2"; GH="github.com/andygeorge/tsc"; GOPRIVATE=$GH go install -v $GH@$VERSION'
+sh -c 'VERSION="v1.0.0"; GH="github.com/andygeorge/tsc"; GOPRIVATE=$GH go install -v $GH@$VERSION'
 ```
 
 ## Usage
