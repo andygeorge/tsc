@@ -6,7 +6,7 @@ Tail Site Code
 
 ```sh
 # install go
-sh -c 'VERSION="v1.0.0"; GH="github.com/andygeorge/tsc"; GOPRIVATE=$GH go install -v $GH@$VERSION'
+sh -c 'VERSION="v1.1.0"; GH="github.com/andygeorge/tsc"; GOPRIVATE=$GH go install -v $GH@$VERSION'
 ```
 
 ## Usage
@@ -14,6 +14,7 @@ sh -c 'VERSION="v1.0.0"; GH="github.com/andygeorge/tsc"; GOPRIVATE=$GH go instal
 ```
 tsc [-f] URL
   -f --follow: follow
+  -q --quiet: quiet, only print when response changes
 ```
 
 eg:

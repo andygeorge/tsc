@@ -15,12 +15,14 @@ const (
 
 var args struct {
 	Url    string `arg:"required,positional"`
-	Follow bool   `arg:"-f"`
+	Follow bool   `arg:"-f,--follow"`
+	Quiet  bool   `arg:"-q,--quiet"`
 }
 
 func main() {
 	var output string
 	var now time.Time
+	var lastStatus string
 	go_arg.MustParse(&args)
 
 	for {
@@ -32,9 +34,15 @@ func main() {
 		defer resp.Body.Close()
 
 		now = time.Now()
-		output = now.Format(DayFormat) + " " + args.Url + ": " + resp.Status
+		currentStatus := resp.Status
+		output = now.Format(DayFormat) + " " + args.Url + ": " + currentStatus
 
-		fmt.Println(output)
+		if !args.Quiet || lastStatus != currentStatus {
+			fmt.Println(output)
+		}
+
+		lastStatus = currentStatus
+
 		if !args.Follow {
 			break
 		}
